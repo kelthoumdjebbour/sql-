@@ -28,8 +28,13 @@
             // Lógica de redirección basada en el contenido del textarea
             if (texto === 'SELECT * FROM Menú') {
                 window.location.href = 'http://localhost:3000/';
-            } else if (texto === 'SELECT * FROM Chefs') {
+
+            }  else if (texto === 'SELECT * FROM Chefs') {
                 window.location.href = 'http://localhost:3000/chef';
+
+			} else if (texto === 'SELECT c.nombre AS Categoría, ch.nombre AS chefs, ch.especialidad FROM Categorías AS c JOIN Chefs AS ch ON c.id_categoria = ch.id_chef;') {
+                window.location.href = 'http://localhost:3000/uno';
+
             } else {
                 alert('Por favor, escribe "opción1" o "opción2"');
             }

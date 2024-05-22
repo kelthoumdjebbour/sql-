@@ -66,7 +66,7 @@ SELECT * FROM PlatosIngredientes;
 -- EspecialidadesPlatos
 SELECT * FROM EspecialidadesPlatos;
 
-Consultas con Filtros:
+-- Consultas con Filtros:
 
 -- Chefs especializados en Cocina Francesa
 SELECT * FROM Chefs WHERE especialidad LIKE '%Francesa%';

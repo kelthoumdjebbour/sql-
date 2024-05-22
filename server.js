@@ -52,6 +52,19 @@ app.get('/chef', (req, res) => {
         });
     });
 });
+app.get('/uno', (req, res) => {
+    const sql = 'SELECT c.nombre AS Categoría, ch.nombre AS chefs, ch.especialidad FROM Categorías AS c JOIN Chefs AS ch ON c.id_categoria = ch.id_chef;'
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: rows
+        });
+    });
+});
 
 // Iniciar el servidor
 app.listen(port, () => {
