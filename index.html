@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="styles.css" rel="stylesheet">
+	<title>Document</title>
+</head>
+<body>
+	<table><tr><th>id_categoria</th><th>nombre</th><th>descripción</th><tr><tr><td>1</td><td>Entrantes</td><td>Platos para abrir el apetito</td></tr><tr><td>2</td><td>Platos Principales</td><td>Platos principales del menú</td></tr></table>
+	<table><tr><th>id_chef</th><th>nombre</th><th>especialidad</th><tr><tr><td>1</td><td>Juan Pérez</td><td>Cocina Italiana</td></tr><tr><td>2</td><td>María García</td><td>Cocina Mexicana</td></tr></table>
+	<table><tr><th>id_especialidad</th><th>nombre</th><tr><tr><td>1</td><td>Vegano</td></tr><tr><td>2</td><td>Sin Gluten</td></tr></table>
+	<table><tr><th>id_plato</th><th>id_especialidad</th><tr><tr><td>1</td><td>1</td></tr><tr><td>2</td><td>2</td></tr></table>
+	<table><tr><th>id_ingrediente</th><th>nombre</th><th>cantidad_stock</th><th>unidad_medida</th><tr><tr><td>1</td><td>Tomate</td><td>100</td><td>kg</td></tr><tr><td>2</td><td>Lechuga</td><td>50</td><td>kg</td></tr></table>
+	<table><tr><th>id_plato</th><th>nombre</th><th>descripción</th><th>id_categoria</th><th>id_chef</th><tr><tr><td>1</td><td>Ensalada Caprese</td><td>Ensalada con tomate, mozzarella y albahaca</td><td>1</td><td>1</td></tr><tr><td>2</td><td>Tacos</td><td>Tacos de carne asada</td><td>2</td><td>2</td></tr></table>
+	<table><tr><th>id_plato</th><th>id_ingrediente</th><th>cantidad</th><tr><tr><td>1</td><td>1</td><td>2</td></tr><tr><td>2</td><td>1</td><td>1</td></tr></table>	
+
+	<form id="redirectForm" onsubmit="handleSubmit(event)">
+        <textarea name="texto" id="texto" placeholder="Escribe algo aquí..."></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+            const texto = document.getElementById('texto').value.trim();
+
+            // Lógica de redirección basada en el contenido del textarea
+            if (texto === 'SELECT * FROM Menú') {
+                window.location.href = 'http://localhost:3000/';
+            } else if (texto === 'SELECT * FROM Chefs') {
+                window.location.href = 'http://localhost:3000/chef';
+            } else {
+                alert('Por favor, escribe "opción1" o "opción2"');
+            }
+        }
+    </script>
+	<script src="server.js"></script>
+</body>
+</html>

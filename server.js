@@ -24,8 +24,22 @@ const db = new sqlite3.Database(dbPath, (err) => {
 });
 
 // Ruta de ejemplo para obtener datos de la base de datos
-app.get('/data', (req, res) => {
-    const sql = 'SELECT * FROM Ingredientes';
+app.get('/', (req, res) => {
+    const sql = 'SELECT * FROM Menú';
+    
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: rows
+        });
+    });
+});
+app.get('/chef', (req, res) => {
+    const sql = 'SELECT * FROM Chefs';
     
     db.all(sql, [], (err, rows) => {
         if (err) {
