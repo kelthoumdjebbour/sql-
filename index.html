@@ -33,13 +33,13 @@
         case 'SELECT * FROM Chefs':
             window.location.href = 'http://localhost:3000/chef';
             break;
-        case 'SELECT c.nombre AS Categoría, ch.nombre AS chefs, ch.especialidad FROM Categorías AS c JOIN Chefs AS ch ON c.id_categoria = ch.id_chef;':
+        case 'SELECT c.nombre AS Categoría, ch.nombre AS chefs, ch.especialidad FROM Categorías AS c JOIN Chefs AS ch ON c.id_categoria = ch.id_chef':
             window.location.href = 'http://localhost:3000/uno';
             break;
-        case 'SELECT Menú.nombre AS Plato, Ingredientes.nombre AS Ingrediente, PlatosIngredientes.cantidad FROM Menú LEFT JOIN PlatosIngredientes ON Menú.id_plato = PlatosIngredientes.id_plato LEFT JOIN Ingredientes ON PlatosIngredientes.id_ingrediente = Ingredientes.id_ingrediente;':
-            window.location.href = 'http://localhost:3000/dos';
+        case 'SELECT Menú.nombre AS plato, Categorías.nombre AS categoría, Chefs.nombre AS chef FROM  Menú JOIN Categorías ON Menú.id_categoria = Categorías.id_categoria JOIN Chefs ON Menú.id_chef = Chefs.id_chef':
+            window.location.href = 'http://localhost:3000/tina';
             break;
-            default:
+        default:
             alert('Por favor, escribe la consulta correctamente. Gracias!');
     }
 }

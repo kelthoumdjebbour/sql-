@@ -53,7 +53,7 @@ app.get('/chef', (req, res) => {
     });
 });
 app.get('/uno', (req, res) => {
-    const sql = 'SELECT c.nombre AS Categoría, ch.nombre AS chefs, ch.especialidad FROM Categorías AS c JOIN Chefs AS ch ON c.id_categoria = ch.id_chef;'
+    const sql = 'SELECT c.nombre AS Categoría, ch.nombre AS chefs, ch.especialidad FROM Categorías AS c JOIN Chefs AS ch ON c.id_categoria = ch.id_chef'
     db.all(sql, [], (err, rows) => {
         if (err) {
             res.status(500).json({ error: err.message });
@@ -65,8 +65,8 @@ app.get('/uno', (req, res) => {
         });
     });
 });
-app.get('/dos', (req, res) => {
-    const sql = 'SELECT Menú.nombre AS Plato, Ingredientes.nombre AS Ingrediente, PlatosIngredientes.cantidad FROM Menú LEFT JOIN PlatosIngredientes ON Menú.id_plato = PlatosIngredientes.id_plato LEFT JOIN Ingredientes ON PlatosIngredientes.id_ingrediente = Ingredientes.id_ingrediente;'
+app.get('/tina', (req, res) => {
+            const sql = 'SELECT Menú.nombre AS plato, Categorías.nombre AS categoría, Chefs.nombre AS chef FROM  Menú JOIN Categorías ON Menú.id_categoria = Categorías.id_categoria JOIN Chefs ON Menú.id_chef = Chefs.id_chef'
     db.all(sql, [], (err, rows) => {
         if (err) {
             res.status(500).json({ error: err.message });
