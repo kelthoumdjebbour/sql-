@@ -52,6 +52,48 @@ app.get('/chef', (req, res) => {
         });
     });
 });
+app.get('/categorias', (req, res) => {
+    const sql = 'SELECT * FROM Categorías';
+    
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: rows
+        });
+    });
+});
+app.get('/ingredientes', (req, res) => {
+    const sql = 'SELECT * FROM Ingredientes';
+    
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: rows
+        });
+    });
+});
+app.get('/especialidades', (req, res) => {
+    const sql = 'SELECT * FROM Especialidades';
+    
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: rows
+        });
+    });
+});
 app.get('/uno', (req, res) => {
     const sql = 'SELECT c.nombre AS Categoría, ch.nombre AS chefs, ch.especialidad FROM Categorías AS c JOIN Chefs AS ch ON c.id_categoria = ch.id_chef'
     db.all(sql, [], (err, rows) => {
@@ -77,6 +119,19 @@ app.get('/tina', (req, res) => {
             data: rows
         });
     });
+});
+app.get('/consulta', (req, res) => {
+    const sql = 'SELECT nombre FROM Chefs WHERE id_chef IN (SELECT id_chef FROM Menú GROUP BY id_chef HAVING COUNT(id_plato) > 1)'
+db.all(sql, [], (err, rows) => {
+if (err) {
+    res.status(500).json({ error: err.message });
+    return;
+}
+res.json({
+    message: 'success',
+    data: rows
+});
+});
 });
 
 // Iniciar el servidor

@@ -7,14 +7,20 @@
 	<title>Document</title>
 </head>
 <body>
-	<table><tr><th>id_categoria</th><th>nombre</th><th>descripción</th><tr><tr><td>1</td><td>Entrantes</td><td>Platos para abrir el apetito</td></tr><tr><td>2</td><td>Platos Principales</td><td>Platos principales del menú</td></tr></table>
-	<table><tr><th>id_chef</th><th>nombre</th><th>especialidad</th><tr><tr><td>1</td><td>Juan Pérez</td><td>Cocina Italiana</td></tr><tr><td>2</td><td>María García</td><td>Cocina Mexicana</td></tr></table>
-	<table><tr><th>id_especialidad</th><th>nombre</th><tr><tr><td>1</td><td>Vegano</td></tr><tr><td>2</td><td>Sin Gluten</td></tr></table>
-	<table><tr><th>id_plato</th><th>id_especialidad</th><tr><tr><td>1</td><td>1</td></tr><tr><td>2</td><td>2</td></tr></table>
-	<table><tr><th>id_ingrediente</th><th>nombre</th><th>cantidad_stock</th><th>unidad_medida</th><tr><tr><td>1</td><td>Tomate</td><td>100</td><td>kg</td></tr><tr><td>2</td><td>Lechuga</td><td>50</td><td>kg</td></tr></table>
-	<table><tr><th>id_plato</th><th>nombre</th><th>descripción</th><th>id_categoria</th><th>id_chef</th><tr><tr><td>1</td><td>Ensalada Caprese</td><td>Ensalada con tomate, mozzarella y albahaca</td><td>1</td><td>1</td></tr><tr><td>2</td><td>Tacos</td><td>Tacos de carne asada</td><td>2</td><td>2</td></tr></table>
-	<table><tr><th>id_plato</th><th>id_ingrediente</th><th>cantidad</th><tr><tr><td>1</td><td>1</td><td>2</td></tr><tr><td>2</td><td>1</td><td>1</td></tr></table>	
-
+    <h2>Categorías</h2>
+	<table><tr><th>id_categoria</th><th>nombre</th><th>descripción</th><tr><tr><td>1</td><td>Entradas</td><td>Platos ligeros para comenzar la comida</td></tr><tr><td>2</td><td>Platos Principales</td><td>Platos fuertes para la comida principal</td></tr><tr><td>3</td><td>Postres</td><td>Dulces para finalizar la comida</td></tr><tr><td>4</td><td>Sopas</td><td>Sopas y caldos variados</td></tr><tr><td>5</td><td>Ensaladas</td><td>Variedad de ensaladas frescas</td></tr><tr><td>6</td><td>Aperitivos</td><td>Pequeños bocados para comenzar</td></tr><tr><td>7</td><td>Bebidas</td><td>Refrescos, jugos y bebidas alcohólicas</td></tr><tr><td>8</td><td>Carnes</td><td>Platos principales con carnes</td></tr><tr><td>9</td><td>Mariscos</td><td>Platos principales con mariscos</td></tr><tr><td>10</td><td>Pastas</td><td>Variedad de platos de pasta</td></tr><tr><td>11</td><td>Panes</td><td>Variedad de panes y bollería</td></tr><tr><td>12</td><td>Salsas</td><td>Variedad de salsas para acompañar</td></tr></table>
+    <h2>Chefs</h2>
+	<table><tr><th>id_chef</th><th>nombre</th><th>especialidad</th><tr><tr><td>1</td><td>Gordon Ramsay</td><td>Cocina Británica</td></tr><tr><td>2</td><td>Massimo Bottura</td><td>Cocina Italiana</td></tr><tr><td>3</td><td>Virgilio Martínez</td><td>Cocina Peruana</td></tr><tr><td>4</td><td>Ferran Adrià</td><td>Cocina Molecular</td></tr><tr><td>5</td><td>Heston Blumenthal</td><td>Cocina de Vanguardia</td></tr><tr><td>6</td><td>Thomas Keller</td><td>Cocina Francesa</td></tr><tr><td>7</td><td>Alice Waters</td><td>Cocina Orgánica</td></tr><tr><td>8</td><td>Joan Roca</td><td>Cocina Catalana</td></tr><tr><td>9</td><td>Enrique Olvera</td><td>Cocina Mexicana</td></tr><tr><td>10</td><td>René Redzepi</td><td>Cocina Nórdica</td></tr><tr><td>11</td><td>Daniel Humm</td><td>Cocina Suiza</td></tr><tr><td>12</td><td>Dominique Crenn</td><td>Cocina Francesa Moderna</td></tr></table>
+    <h2>Especialidades</h2>
+	<table><tr><th>id_especialidad</th><th>nombre</th><tr><tr><td>1</td><td>Vegetariano</td></tr><tr><td>2</td><td>Sin Gluten</td></tr><tr><td>3</td><td>Vegano</td></tr><tr><td>4</td><td>Halal</td></tr><tr><td>5</td><td>Kosher</td></tr><tr><td>6</td><td>Sin Lactosa</td></tr><tr><td>7</td><td>Baja en Sodio</td></tr><tr><td>8</td><td>Orgánica</td></tr><tr><td>9</td><td>Diabética</td></tr><tr><td>10</td><td>Paleo</td></tr><tr><td>11</td><td>Keto</td></tr><tr><td>12</td><td>Crudivegana</td></tr></table>
+    <h2>EspecialidadesPlatos</h2>
+	<table><tr><th>id_plato</th><th>id_especialidad</th><tr><tr><td>1</td><td>1</td></tr><tr><td>2</td><td>2</td></tr><tr><td>3</td><td>3</td></tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>5</td></tr><tr><td>6</td><td>6</td></tr><tr><td>7</td><td>7</td></tr><tr><td>8</td><td>8</td></tr><tr><td>9</td><td>9</td></tr><tr><td>10</td><td>10</td></tr><tr><td>11</td><td>11</td></tr><tr><td>12</td><td>12</td></tr></table>
+    <h2>Menú</h2>
+	<table><tr><th>id_plato</th><th>nombre</th><th>descripción</th><th>id_categoria</th><th>id_chef</th><tr><tr><td>1</td><td>Ensalada César</td><td>Ensalada con lechuga romana, crutones y aderezo César</td><td>1</td><td>1</td></tr><tr><td>2</td><td>Spaghetti Carbonara</td><td>Pasta con huevo, queso, panceta y pimienta</td><td>2</td><td>2</td></tr><tr><td>3</td><td>Tiramisú</td><td>Postre italiano con café, queso mascarpone y cacao</td><td>3</td><td>2</td></tr><tr><td>4</td><td>Sopa de Pollo</td><td>Sopa reconfortante con pollo y vegetales</td><td>4</td><td>4</td></tr><tr><td>5</td><td>Ensalada Caprese</td><td>Ensalada italiana con tomate, mozzarella y albahaca</td><td>5</td><td>5</td></tr><tr><td>6</td><td>Tacos al Pastor</td><td>Tacos mexicanos con cerdo adobado</td><td>6</td><td>6</td></tr><tr><td>7</td><td>Mojito</td><td>Cóctel cubano con ron, menta y limón</td><td>7</td><td>7</td></tr><tr><td>8</td><td>Bife de Chorizo</td><td>Corte argentino de carne de res</td><td>8</td><td>8</td></tr><tr><td>9</td><td>Paella</td><td>Plato español de arroz con mariscos</td><td>9</td><td>9</td></tr><tr><td>10</td><td>Lasagna</td><td>Plato italiano de capas de pasta con carne y queso</td><td>10</td><td>10</td></tr><tr><td>11</td><td>Baguette</td><td>Pan francés crujiente</td><td>11</td><td>11</td></tr><tr><td>12</td><td>Salsa Pesto</td><td>Salsa italiana con albahaca, ajo y piñones</td><td>12</td><td>12</td></tr></table>
+    <h2>Ingredientes</h2>
+    <table><tr><th>id_ingrediente</th><th>nombre</th><th>cantidad_stock</th><th>unidad_medida</th><tr><tr><td>1</td><td>Tomate</td><td>50</td><td>kg</td></tr><tr><td>2</td><td>Harina</td><td>200</td><td>kg</td></tr><tr><td>3</td><td>Azúcar</td><td>150</td><td>kg</td></tr><tr><td>4</td><td>Leche</td><td>100</td><td>L</td></tr><tr><td>5</td><td>Huevos</td><td>300</td><td>unidades</td></tr><tr><td>6</td><td>Pollo</td><td>100</td><td>kg</td></tr><tr><td>7</td><td>Zanahoria</td><td>75</td><td>kg</td></tr><tr><td>8</td><td>Papas</td><td>200</td><td>kg</td></tr><tr><td>9</td><td>Cebolla</td><td>150</td><td>kg</td></tr><tr><td>10</td><td>Ajo</td><td>50</td><td>kg</td></tr><tr><td>11</td><td>Aceite de Oliva</td><td>100</td><td>L</td></tr><tr><td>12</td><td>Queso</td><td>120</td><td>kg</td></tr><tr><td>13</td><td>Mantequilla</td><td>80</td><td>kg</td></tr><tr><td>14</td><td>Sal</td><td>300</td><td>kg</td></tr><tr><td>15</td><td>Pimienta</td><td>100</td><td>kg</td></tr></table>
+    <h2>Platosingredientes</h2>
+    <table><tr><th>id_plato</th><th>id_ingrediente</th><th>cantidad</th><tr><tr><td>1</td><td>1</td><td>2</td></tr><tr><td>2</td><td>2</td><td>1</td></tr><tr><td>3</td><td>3</td><td>0.5</td></tr><tr><td>3</td><td>4</td><td>0.5</td></tr><tr><td>3</td><td>5</td><td>3</td></tr><tr><td>4</td><td>6</td><td>1</td></tr><tr><td>4</td><td>7</td><td>0.5</td></tr><tr><td>4</td><td>8</td><td>0.5</td></tr><tr><td>4</td><td>9</td><td>0.25</td></tr><tr><td>5</td><td>1</td><td>0.3</td></tr><tr><td>5</td><td>12</td><td>0.2</td></tr><tr><td>6</td><td>6</td><td>0.5</td></tr><tr><td>6</td><td>10</td><td>0.1</td></tr><tr><td>8</td><td>6</td><td>0.7</td></tr><tr><td>10</td><td>2</td><td>0.6</td></tr></table>
 	<form id="redirectForm" onsubmit="handleSubmit(event)">
         <textarea name="texto" id="texto" placeholder="Escribe tu consuta aquí por favor. Gracias"></textarea>
         <button type="submit">Enviar</button>
@@ -33,8 +39,20 @@
         case 'SELECT * FROM Chefs':
             window.location.href = 'http://localhost:3000/chef';
             break;
+         case 'SELECT * FROM Categorías':
+            window.location.href = 'http://localhost:3000/categorias';
+            break;
+        case 'SELECT * FROM Especialidades':
+            window.location.href = 'http://localhost:3000/especialidades';
+            break;
+        case 'SELECT * FROM Ingredientes':
+            window.location.href = 'http://localhost:3000/ingredientes';
+            break;
         case 'SELECT c.nombre AS Categoría, ch.nombre AS chefs, ch.especialidad FROM Categorías AS c JOIN Chefs AS ch ON c.id_categoria = ch.id_chef':
             window.location.href = 'http://localhost:3000/uno';
+            break;
+        case 'SELECT nombre FROM Chefs WHERE id_chef IN (SELECT id_chef FROM Menú GROUP BY id_chef HAVING COUNT(id_plato) > 1)':
+            window.location.href = 'http://localhost:3000/consulta';
             break;
         case 'SELECT Menú.nombre AS plato, Categorías.nombre AS categoría, Chefs.nombre AS chef FROM  Menú JOIN Categorías ON Menú.id_categoria = Categorías.id_categoria JOIN Chefs ON Menú.id_chef = Chefs.id_chef':
             window.location.href = 'http://localhost:3000/tina';

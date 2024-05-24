@@ -4,6 +4,10 @@ table {
     width: 100%;
     margin-bottom: 20px;
 }
+h2{
+    text-align: center;
+    color: black;
+}
 
 th, td {
     border: 1px solid #dddddd;
