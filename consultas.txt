@@ -52,8 +52,8 @@ INNER JOIN Especialidades ON EspecialidadesPlatos.id_especialidad = Especialidad
 
 -- Left Join:
 
--- Obtener todos los platos y sus categorías (incluyendo aquellos sin categorías asignadas)
-SELECT Menú.nombre AS Plato, Categorías.nombre AS Categoría
+-- Obtener todos los platos y sus categorias (incluyendo aquellos sin categorías asignadas)
+SELECT Menú.nombre AS plato, Categorías.nombre AS categoria
 FROM Menú
 LEFT JOIN Categorías ON Menú.id_categoria = Categorías.id_categoria;
 

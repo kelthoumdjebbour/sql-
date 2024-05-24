@@ -65,6 +65,19 @@ app.get('/uno', (req, res) => {
         });
     });
 });
+app.get('/dos', (req, res) => {
+    const sql = 'SELECT Menú.nombre AS Plato, Ingredientes.nombre AS Ingrediente, PlatosIngredientes.cantidad FROM Menú LEFT JOIN PlatosIngredientes ON Menú.id_plato = PlatosIngredientes.id_plato LEFT JOIN Ingredientes ON PlatosIngredientes.id_ingrediente = Ingredientes.id_ingrediente;'
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json({
+            message: 'success',
+            data: rows
+        });
+    });
+});
 
 // Iniciar el servidor
 app.listen(port, () => {

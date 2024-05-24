@@ -1,0 +1,6 @@
+SELECT * FROM Menú
+
+SELECT * FROM Chefs
+
+SELECT c.nombre AS Categoría, ch.nombre AS chefs, ch.especialidad FROM Categorías AS c JOIN Chefs AS ch ON c.id_categoria = ch.id_chef
+

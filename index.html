@@ -16,29 +16,34 @@
 	<table><tr><th>id_plato</th><th>id_ingrediente</th><th>cantidad</th><tr><tr><td>1</td><td>1</td><td>2</td></tr><tr><td>2</td><td>1</td><td>1</td></tr></table>	
 
 	<form id="redirectForm" onsubmit="handleSubmit(event)">
-        <textarea name="texto" id="texto" placeholder="Escribe algo aquí..."></textarea>
+        <textarea name="texto" id="texto" placeholder="Escribe tu consuta aquí por favor. Gracias"></textarea>
         <button type="submit">Enviar</button>
     </form>
 
     <script>
         function handleSubmit(event) {
-            event.preventDefault(); // Prevenir el envío del formulario
-            const texto = document.getElementById('texto').value.trim();
+    event.preventDefault(); // Prevenir el envío del formulario
+    const texto = document.getElementById('texto').value.trim();
 
-            // Lógica de redirección basada en el contenido del textarea
-            if (texto === 'SELECT * FROM Menú') {
-                window.location.href = 'http://localhost:3000/';
+    // Lógica de redirección basada en el contenido del textarea
+    switch (texto) {
+        case 'SELECT * FROM Menú':
+            window.location.href = 'http://localhost:3000/';
+            break;
+        case 'SELECT * FROM Chefs':
+            window.location.href = 'http://localhost:3000/chef';
+            break;
+        case 'SELECT c.nombre AS Categoría, ch.nombre AS chefs, ch.especialidad FROM Categorías AS c JOIN Chefs AS ch ON c.id_categoria = ch.id_chef;':
+            window.location.href = 'http://localhost:3000/uno';
+            break;
+        case 'SELECT Menú.nombre AS Plato, Ingredientes.nombre AS Ingrediente, PlatosIngredientes.cantidad FROM Menú LEFT JOIN PlatosIngredientes ON Menú.id_plato = PlatosIngredientes.id_plato LEFT JOIN Ingredientes ON PlatosIngredientes.id_ingrediente = Ingredientes.id_ingrediente;':
+            window.location.href = 'http://localhost:3000/dos';
+            break;
+            default:
+            alert('Por favor, escribe la consulta correctamente. Gracias!');
+    }
+}
 
-            }  else if (texto === 'SELECT * FROM Chefs') {
-                window.location.href = 'http://localhost:3000/chef';
-
-			} else if (texto === 'SELECT c.nombre AS Categoría, ch.nombre AS chefs, ch.especialidad FROM Categorías AS c JOIN Chefs AS ch ON c.id_categoria = ch.id_chef;') {
-                window.location.href = 'http://localhost:3000/uno';
-
-            } else {
-                alert('Por favor, escribe "opción1" o "opción2"');
-            }
-        }
     </script>
 	<script src="server.js"></script>
 </body>
